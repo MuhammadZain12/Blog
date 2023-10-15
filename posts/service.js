@@ -28,5 +28,5 @@ app.post('/posts', (req, res) => {
 
 
 app.listen(4000,()=>{
-    console.log('Server up and running')
+    console.log('Server up and running : localhost:4000')
 })
