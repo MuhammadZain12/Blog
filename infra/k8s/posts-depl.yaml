@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: posts-depl
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: posts
@@ -13,5 +13,5 @@ spec:
         app: posts
     spec:
       containers:
-        - image: posts:1.0
+        - image: posts:latest
           name: posts
