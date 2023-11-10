@@ -1,20 +1,19 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment 
 metadata:
-  name: posts-depl
+  name: query-depl
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: posts
+  selector: 
+    app: query
   template:
     metadata:
       labels:
-        app: posts
+        app: query
     spec:
       containers:
-        - name: posts
-          image: muhammadzain12/posts:latest
+        - name: query
+          image: muhammadzain12/query:latest
           resources:
             limits:
               memory: "200Mi"
@@ -23,16 +22,16 @@ spec:
               memory: "100Mi"
               cpu: "0.3"
 ---
-apiVersion: v1
-kind: Service
+apiVersion: v1 
+kind: Service 
 metadata:
-  name: posts-srv
+  name: query-srv
 spec:
   type: ClusterIP
   selector:
-    app: posts
+    app: query
   ports:
-    - name: posts
+    - name: query
       protocol: TCP
-      port: 4000
-      targetPort: 4000
+      port: 4002
+      targetPort: 4002
