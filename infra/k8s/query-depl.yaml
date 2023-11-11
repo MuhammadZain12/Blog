@@ -5,7 +5,8 @@ metadata:
 spec:
   replicas: 1
   selector: 
-    app: query
+    matchLabels:
+      app: query
   template:
     metadata:
       labels:
