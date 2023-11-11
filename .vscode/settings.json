@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "kubernetes://schema/v1%40service": "file:///d%3A/Coding%20Playground/MIcroservices/miniApp/infra/k8s/comments-depl.yaml"
-    }
-}
