@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress 
 metadata: 
   name: ingress-srv
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
@@ -23,14 +25,14 @@ spec:
                 port:
                   number: 4002
           - path: /posts/?(.*)/comments
-            pathType: Exact
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: comments-srv
                 port:
                   number: 4001
           - path: /?(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: client-srv
