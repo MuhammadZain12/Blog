@@ -17,10 +17,10 @@ spec:
           image: muhammadzain12/client:latest
           resources:
             limits:
-              memory: "200Mi"
+              memory: "1000Mi"
               cpu: "0.6"
             requests:
-              memory: "100Mi"
+              memory: "500Mi"
               cpu: "0.3"
 ---
 apiVersion: v1
